@@ -1,0 +1,8 @@
+config:
+  minecraft:namespace: games
+  minecraft:replicas: 1
+  minecraft:image: itzg/minecraft-server:latest
+  minecraft:serverPort: 25565
+  minecraft:memory: 1G
+  minecraft:eula: true
+  minecraft:motd: "Welcome to Pulumi Minecraft"
