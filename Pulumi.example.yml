@@ -1,0 +1,42 @@
+config:
+  # Kubernetes settings
+  minecraft:namespace: games
+  minecraft:serviceType: ClusterIP  # Options: ClusterIP, NodePort, LoadBalancer
+  # minecraft:nodePort: 30565  # Only if serviceType is NodePort
+
+  # Server resources
+  minecraft:memory: 2G
+  minecraft:cpu: "1"
+  minecraft:storageSize: 10Gi
+  minecraft:storageClass: standard
+
+  # Server image
+  minecraft:image: itzg/minecraft-server:latest
+  minecraft:serverType: VANILLA  # Options: VANILLA, PAPER, FORGE, FABRIC, etc.
+  minecraft:version: LATEST  # Minecraft version
+
+  # Network ports
+  minecraft:serverPort: 25565
+  minecraft:queryPort: 25565
+  minecraft:rconPort: 25575
+
+  # Game settings
+  minecraft:eula: true
+  minecraft:motd: "Welcome to Pulumi Minecraft Server"
+  minecraft:gameMode: survival  # Options: survival, creative, adventure, spectator
+  minecraft:difficulty: normal  # Options: peaceful, easy, normal, hard
+  minecraft:maxPlayers: 20
+  minecraft:viewDistance: 10
+  minecraft:onlineMode: true
+  minecraft:pvp: true
+  minecraft:allowFlight: false
+  minecraft:spawnProtection: 16
+
+  # RCON settings (remote console)
+  minecraft:enableRcon: false
+  # minecraft:rconPassword:  # Set as secret: pulumi config set --secret minecraft:rconPassword "yourpassword"
+
+  # Mod Configuration
+  minecraft:modsEnabled: false
+  minecraft:bluemapEnabled: false  # Web map viewer (requires Paper/Spigot/Bukkit)
+  minecraft:bluemapVersion: 5.5

@@ -1,0 +1,7 @@
+name: minecraft
+runtime:
+  name: nodejs
+  options:
+    typescript: true
+description: Minecraft server on Kubernetes via Pulumi
+main: src/index.ts
